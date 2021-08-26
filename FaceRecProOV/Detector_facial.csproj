@@ -1,0 +1,488 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CC813884-5D90-4044-9571-8FB7C54D9612}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Detector_facial</RootNamespace>
+    <AssemblyName>Detector_facial</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Detector_facial.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>fac_r.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Emgu.CV, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\compartida\Face Recognition 2.4.9\Face Recognition 2.4.9\Face Recognition\bin\Debug\Emgu.CV.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.UI, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\compartida\Face Recognition 2.4.9\Face Recognition 2.4.9\Face Recognition\bin\Debug\Emgu.CV.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.Util, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\compartida\Face Recognition 2.4.9\Face Recognition 2.4.9\Face Recognition\bin\Debug\Emgu.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classifier_Train.cs" />
+    <Compile Include="estaticas\estatic.cs" />
+    <Compile Include="formularios\frmSetMetodo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frmSetMetodo.Designer.cs">
+      <DependentUpon>frmSetMetodo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\frmacerca_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frmacerca_de.Designer.cs">
+      <DependentUpon>frmacerca_de.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\frmActivar_usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frmActivar_usuarios.Designer.cs">
+      <DependentUpon>frmActivar_usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\frmcrearClave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frmcrearClave.Designer.cs">
+      <DependentUpon>frmcrearClave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\frmdatos_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frmdatos_login.Designer.cs">
+      <DependentUpon>frmdatos_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\frmAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frmAsistencia.Designer.cs">
+      <DependentUpon>frmAsistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\frmEntrenamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frmEntrenamiento.Designer.cs">
+      <DependentUpon>frmEntrenamiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\frmlistado_tiempos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frmlistado_tiempos.Designer.cs">
+      <DependentUpon>frmlistado_tiempos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\frmlista_usuarios_foto_per.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frmlista_usuarios_foto_per.Designer.cs">
+      <DependentUpon>frmlista_usuarios_foto_per.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\frmpruebas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frmpruebas.Designer.cs">
+      <DependentUpon>frmpruebas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\frmReconocimiento_batch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frmReconocimiento_batch.Designer.cs">
+      <DependentUpon>frmReconocimiento_batch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\frmRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frmRoles.Designer.cs">
+      <DependentUpon>frmRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\fprin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\fprin.Designer.cs">
+      <DependentUpon>fprin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\frm_asistencia_detales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frm_asistencia_detales.Designer.cs">
+      <DependentUpon>frm_asistencia_detales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\frm_cambiar_clave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frm_cambiar_clave.Designer.cs">
+      <DependentUpon>frm_cambiar_clave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\frm_rep_recon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frm_rep_recon.Designer.cs">
+      <DependentUpon>frm_rep_recon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\frm_selec_roles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frm_selec_roles.Designer.cs">
+      <DependentUpon>frm_selec_roles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\frmlistado_usuariosf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frmlistado_usuariosf.Designer.cs">
+      <DependentUpon>frmlistado_usuariosf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\frmlogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frmlogin.Designer.cs">
+      <DependentUpon>frmlogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\frmregistrados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frmregistrados.Designer.cs">
+      <DependentUpon>frmregistrados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="views\frmEntrenamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmEntrenamiento.Designer.cs">
+      <DependentUpon>frmEntrenamiento.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="formularios\frmSetMetodo.resx">
+      <DependentUpon>frmSetMetodo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frmacerca_de.resx">
+      <DependentUpon>frmacerca_de.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frmActivar_usuarios.resx">
+      <DependentUpon>frmActivar_usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frmcrearClave.resx">
+      <DependentUpon>frmcrearClave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frmdatos_login.resx">
+      <DependentUpon>frmdatos_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\fprin.resx">
+      <DependentUpon>fprin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frmAsistencia.resx">
+      <DependentUpon>frmAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frmEntrenamiento.resx">
+      <DependentUpon>frmEntrenamiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frmlistado_tiempos.resx">
+      <DependentUpon>frmlistado_tiempos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frmlista_usuarios_foto_per.resx">
+      <DependentUpon>frmlista_usuarios_foto_per.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frmpruebas.resx">
+      <DependentUpon>frmpruebas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frmReconocimiento_batch.resx">
+      <DependentUpon>frmReconocimiento_batch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frmRoles.resx">
+      <DependentUpon>frmRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frm_asistencia_detales.resx">
+      <DependentUpon>frm_asistencia_detales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frm_cambiar_clave.resx">
+      <DependentUpon>frm_cambiar_clave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frm_rep_recon.resx">
+      <DependentUpon>frm_rep_recon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frm_selec_roles.resx">
+      <DependentUpon>frm_selec_roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frmlistado_usuariosf.resx">
+      <DependentUpon>frmlistado_usuariosf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frmlogin.resx">
+      <DependentUpon>frmlogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frmregistrados.resx">
+      <DependentUpon>frmregistrados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="views\frmEntrenamiento.resx">
+      <DependentUpon>frmEntrenamiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="iconos\CALENDR.ANI" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\appvb.ds.datasource" />
+    <None Include="Properties\DataSources\appvb.dsTableAdapters.Act_emp_TableAdapter.datasource" />
+    <None Include="Properties\DataSources\appvb.dsTableAdapters.cargosTableAdapter.datasource" />
+    <None Include="Properties\DataSources\appvb.dsTableAdapters.empleadosTableAdapter.datasource" />
+    <None Include="Properties\DataSources\appvb.dsTableAdapters.estado_civilTableAdapter.datasource" />
+    <None Include="Properties\DataSources\appvb.dsTableAdapters.fotos_empleados_camTableAdapter.datasource" />
+    <None Include="Properties\DataSources\appvb.dsTableAdapters.fotos_empTableAdapter.datasource" />
+    <None Include="Properties\DataSources\appvb.dsTableAdapters.seccionesTableAdapter.datasource" />
+    <None Include="Properties\DataSources\appvb.dsTableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\appvb.dsTableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\appvb.dsTableAdapters.tmp_fotos1TableAdapter.datasource" />
+    <None Include="Properties\DataSources\appvb.dsTableAdapters.tmp_fotos2TableAdapter.datasource" />
+    <None Include="Properties\DataSources\appvb.dsTableAdapters.tmp_fotosTableAdapter.datasource" />
+    <None Include="Properties\DataSources\appvb.dsTableAdapters.tmp_fotos_filtroTableAdapter.datasource" />
+    <None Include="Properties\DataSources\appvb.dsTableAdapters.vw_fotos_registradasTableAdapter.datasource" />
+    <None Include="Properties\DataSources\appvb.dsTableAdapters.vw_lis_usu_estado_foTableAdapter.datasource" />
+    <None Include="Properties\DataSources\appvb.dsTableAdapters.vw_l_cf_acti1TableAdapter.datasource" />
+    <None Include="Properties\DataSources\appvb.dsTableAdapters.vw_l_cf_actiTableAdapter.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fac_r.ico" />
+    <Content Include="iconos\activar.gif" />
+    <Content Include="iconos\BASKET1.ICO" />
+    <Content Include="iconos\borra.gif" />
+    <Content Include="iconos\buscar.ico" />
+    <Content Include="iconos\Calculator 3.ico" />
+    <Content Include="iconos\calendario.ico" />
+    <Content Include="iconos\calendario1.ico" />
+    <Content Include="iconos\CHKL.gif" />
+    <Content Include="iconos\CLOCK.ICO" />
+    <Content Include="iconos\corrector.gif" />
+    <Content Include="iconos\DATABASE.ICO" />
+    <Content Include="iconos\destruye.gif" />
+    <Content Include="iconos\diskette01.ico" />
+    <Content Include="iconos\diskette02.ico" />
+    <Content Include="iconos\diskette03.ico" />
+    <Content Include="iconos\diskette04.ico" />
+    <Content Include="iconos\diskette05.ico" />
+    <Content Include="iconos\diskette08.ico" />
+    <Content Include="iconos\diskette11.ico" />
+    <Content Include="iconos\EDIT.gif" />
+    <Content Include="iconos\ENGRANE.gif" />
+    <Content Include="iconos\EXCEL.gif" />
+    <Content Include="iconos\EXIT.ICO" />
+    <Content Include="iconos\f2.gif" />
+    <Content Include="iconos\File Management.ico" />
+    <Content Include="iconos\GENTE.gif" />
+    <Content Include="iconos\graba1 copy.gif" />
+    <Content Include="iconos\grabark.gif" />
+    <Content Include="iconos\GROUP.ICO" />
+    <Content Include="iconos\impresora02.ico" />
+    <Content Include="iconos\impresora08.ico" />
+    <Content Include="iconos\KEY10B.ICO" />
+    <Content Include="iconos\LOCKEYS2.ICO" />
+    <Content Include="iconos\LOGFIL~1.ICO" />
+    <Content Include="iconos\MISTERIO_ENTORNO_DE_RED.ICO" />
+    <Content Include="iconos\NOTEPAD.ICO" />
+    <Content Include="iconos\NUEV.gif" />
+    <Content Include="iconos\nuevo.gif" />
+    <Content Include="iconos\nuevo1.gif" />
+    <Content Include="iconos\nuevo2.gif" />
+    <Content Include="iconos\pacientes.ico" />
+    <Content Include="iconos\papel_y_lapiz.ico" />
+    <Content Include="iconos\people2.ico" />
+    <Content Include="iconos\Recycle.ico" />
+    <Content Include="iconos\recycle01.ico" />
+    <Content Include="iconos\reload2.gif" />
+    <Content Include="iconos\rrhh99.gif" />
+    <Content Include="iconos\salir copiar.gif" />
+    <Content Include="iconos\Save-as_37111 %281%29.png" />
+    <Content Include="iconos\send_email.gif" />
+    <Content Include="iconos\Shell_52.ico" />
+    <Content Include="iconos\stop1.gif" />
+    <Content Include="iconos\TOOLS.ICO" />
+    <Content Include="iconos\trae.gif" />
+    <Content Include="iconos\user.ico" />
+    <Content Include="iconos\WinXPSetV4 Icon 17.ico" />
+    <Content Include="iconos\xls.ico" />
+    <Content Include="iconos\_EXCEL_REPO.gif" />
+    <Content Include="iconos\__borradoR2.gif" />
+    <Content Include="imagenes\roles.jpg" />
+    <None Include="Resources\reload.psd.png" />
+    <None Include="Resources\nube_grabar.png" />
+    <None Include="Resources\ok1.png" />
+    <None Include="Resources\ok.png" />
+    <None Include="Resources\uned.jpg" />
+    <None Include="Resources\set_pass copy1.png" />
+    <None Include="Resources\set_pass copy.png" />
+    <None Include="Resources\ver_si.png" />
+    <None Include="Resources\ver_no.png" />
+    <None Include="Resources\user_generic.png" />
+    <None Include="Resources\face2.png" />
+    <None Include="Resources\candado.png" />
+    <Content Include="opencv_core249.dll" />
+    <Content Include="opencv_imgproc249.dll" />
+    <None Include="Resources\desconocido.jpg" />
+    <Content Include="Resources\key.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MSDATASRC">
+      <Guid>{7C0FFAB0-CD84-11D0-949A-00A0C91110ED}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\appvb\appvb.vbproj">
+      <Project>{060430c9-7bb2-4213-be5e-223bf329bacf}</Project>
+      <Name>appvb</Name>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </ProjectReference>
+    <ProjectReference Include="..\NotificationWindow\NotificationWindow.csproj">
+      <Project>{605006eb-d4e6-4312-a293-3a43fac43240}</Project>
+      <Name>NotificationWindow</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="x64\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
